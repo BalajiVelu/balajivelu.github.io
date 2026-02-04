@@ -53,7 +53,8 @@ To document how I translate design thinking into real, working systems.
 **Design → Code** 
 *(Vibe coding • Performance focus)*
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+ 
 **Deployment** 
 *(GitHub Pages)*
 
