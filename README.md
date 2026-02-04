@@ -20,8 +20,9 @@ intent to implementation.
 ## 🚀 Workflow
 
 <div align="center">
-**Intent**       
-*(I need a space to present my work)*  
+
+**Intent**   
+*(I need a space to present my work)*
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ 
 
