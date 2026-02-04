@@ -8,19 +8,16 @@ then gradually evolved the project into a fully coded, production-ready
 experience. This mirrors how I approach UI/UX and XR systems ---from
 intent to implementation.
 
-```
 
 ## 🚀 Live Demo
 
 [View Live Portfolio](https://balajivelu.github.io)
 
-```
 
 ## ✨ Why this repo:
 
 To document how I translate design thinking into real, working systems.
 
-```
 
 ## 🛠️ Tech Stack
 
@@ -31,7 +28,6 @@ To document how I translate design thinking into real, working systems.
 - **UI Components:** shadcn/ui
 - **Icons:** Lucide React
 
-```
 
 ## 🚀 Workflow
 
@@ -47,7 +43,6 @@ To document how I translate design thinking into real, working systems.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓  
 **Deployment** GitHub Pages
 
-```
 
 ## 🔗 Links
 
@@ -56,4 +51,4 @@ To document how I translate design thinking into real, working systems.
 
 ---
 
-Built with ❤️ by Balaji Velu
+Built with ❤️ by Balaji Velu ©
