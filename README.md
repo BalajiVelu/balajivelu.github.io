@@ -4,19 +4,8 @@ This repository hosts my personal portfolio website showcasing XR, Simulation, R
 
 Instead of starting with code, I began with storytelling and design ,
 then gradually evolved the project into a fully coded, production-ready
-experience. This mirrors how I approach UI/UX and XR systems ---from
+experience. This mirrors how I approach UI/UX and XR systems from
 intent to implementation.
-
-
-## 🚀 Live Demo
-
-[View Live Portfolio](https://balajivelu.github.io)
-
-
-## ✨ Why this repo:
-
-To document how I translate design thinking into real, working systems.
-
 
 ## 🛠️ Tech Stack
 
@@ -30,8 +19,8 @@ To document how I translate design thinking into real, working systems.
 
 ## 🚀 Workflow
 
-**Intent** 
-*(I need a space to present my work)*  
+<div align="center">
+**Intent** *(I need a space to present my work)*  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ 
  
@@ -57,12 +46,17 @@ To document how I translate design thinking into real, working systems.
  
 **Deployment** 
 *(GitHub Pages)*
-
+</div>
 
 ## 🔗 Links
 
+- **[View Live Portfolio 🚀](https://balajivelu.github.io)**
 - **[LinkedIn](https://www.linkedin.com/in/balaji-velu/)**
 - **[Email](balajivelu3097@gmail.com)**
+
+## ✨ Why this repo:
+
+To document how I translate design thinking into real, working systems.
 
 ---
 
