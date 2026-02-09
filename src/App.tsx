@@ -1084,7 +1084,7 @@ function Portfolio() {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://drive.google.com/uc?export=download&id=19W2_606QvhIKcbC5m5nZPwPt_gYJCH6u?usp=sharing"
+              href="https://drive.google.com/uc?export=download&id=19W2_606QvhIKcbC5m5nZPwPt_gYJCH6u"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[#A7A9B5] hover:text-[#39FF14] transition-colors"
