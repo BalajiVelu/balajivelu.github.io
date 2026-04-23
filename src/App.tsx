@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Mail, 
-  Linkedin, 
-  Github, 
-  ExternalLink, 
+import {
+  Mail,
+  Linkedin,
+  Github,
+  ExternalLink,
   ChevronRight,
   Sparkles,
   Box,
@@ -199,11 +199,11 @@ const experiments = [
 function CyclingText() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const textRef = useRef<HTMLDivElement>(null);
-  
+
   const texts = [
-    "bringing realities between digital and real worlds",
-    "elevating spatial experience with AR/VR/MR interactions",
-    "Crafting immersive experiences"
+    "Building end-to-end products in XR, AI, and Robotics",
+    "Architecting Digital Twins and Industrie 4.0 simulations",
+    "Bridging technical execution with strategic consulting"
   ];
 
   useEffect(() => {
@@ -215,7 +215,7 @@ function CyclingText() {
           duration: 0.3,
           onComplete: () => {
             setCurrentIndex((prev) => (prev + 1) % texts.length);
-            gsap.fromTo(textRef.current, 
+            gsap.fromTo(textRef.current,
               { opacity: 0, y: 10 },
               { opacity: 1, y: 0, duration: 0.3 }
             );
@@ -234,18 +234,56 @@ function CyclingText() {
   );
 }
 
+// Cycling Roles Component
+function CyclingRoles() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const roleRef = useRef<HTMLParagraphElement>(null);
+
+  const roles = [
+    "@ BCG Group - Technical Consultant",
+    "@ BMW Group - System Software Engineer"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (roleRef.current) {
+        gsap.to(roleRef.current, {
+          opacity: 0,
+          y: -5,
+          duration: 0.3,
+          onComplete: () => {
+            setCurrentIndex((prev) => (prev + 1) % roles.length);
+            gsap.fromTo(roleRef.current,
+              { opacity: 0, y: 5 },
+              { opacity: 1, y: 0, duration: 0.3 }
+            );
+          }
+        });
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <p ref={roleRef} className="mt-1 font-medium text-[#F5F7FF]">
+      {roles[currentIndex]}
+    </p>
+  );
+}
+
 // Project Detail Page
 type ProjectType = typeof projects[0] | typeof experiments[0];
 
 function ProjectDetail({ project, onBack }: { project: ProjectType; onBack: () => void }) {
   const isProject = 'demoLink' in project || 'isInProgress' in project;
   const proj = project as typeof projects[0];
-  
+
   return (
     <div className="min-h-screen bg-[#05050B] text-[#F5F7FF]">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-[1000] px-6 py-5 flex justify-between items-center bg-[#05050B]/80 backdrop-blur-sm">
-        <button 
+        <button
           onClick={onBack}
           className="flex items-center gap-2 text-[#A7A9B5] hover:text-[#39FF14] transition-colors"
         >
@@ -259,8 +297,8 @@ function ProjectDetail({ project, onBack }: { project: ProjectType; onBack: () =
 
       {/* Hero Image */}
       <div className="relative h-[60vh] mt-16">
-        <img 
-          src={(project as any).detailImage || (project as any).cardImage} 
+        <img
+          src={(project as any).detailImage || (project as any).cardImage}
           alt={project.title}
           className="w-full h-full object-cover"
         />
@@ -286,10 +324,10 @@ function ProjectDetail({ project, onBack }: { project: ProjectType; onBack: () =
         <p className="text-[#A7A9B5] text-xl mb-8">
           {project.description}
         </p>
-        
+
         {/* Demo Link */}
         {isProject && proj.demoLink && (
-          <a 
+          <a
             href={proj.demoLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -299,7 +337,7 @@ function ProjectDetail({ project, onBack }: { project: ProjectType; onBack: () =
             Watch Demo
           </a>
         )}
-        
+
         {'details' in project && (
           <div className="prose prose-invert max-w-none mt-8">
             {proj.details.split('\n\n').map((paragraph, index) => (
@@ -332,13 +370,13 @@ function Portfolio() {
     const ctx = gsap.context(() => {
       // Hero entrance animation
       const heroTl = gsap.timeline({ delay: 0.3 });
-      
+
       heroTl
-        .fromTo(orbRef.current, 
+        .fromTo(orbRef.current,
           { scale: 0.65, rotation: -8, opacity: 0 },
           { scale: 1, rotation: 0, opacity: 1, duration: 1.1, ease: 'power3.out' }
         )
-        .fromTo(headlineRef.current?.children || [], 
+        .fromTo(headlineRef.current?.children || [],
           { y: 24, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power2.out' },
           '-=0.7'
@@ -385,32 +423,32 @@ function Portfolio() {
         scrub: 0.6,
         onUpdate: (self) => {
           const progress = self.progress;
-          
+
           if (progress > 0.7) {
             const exitProgress = (progress - 0.7) / 0.3;
-            
+
             gsap.set(headlineRef.current, {
               y: -22 * exitProgress + 'vh',
               opacity: 1 - exitProgress * 0.75
             });
-            
+
             gsap.set(orbRef.current, {
               scale: 1 - 0.28 * exitProgress,
               rotation: 18 * exitProgress,
               x: -18 * exitProgress + 'vw',
               opacity: 1 - exitProgress * 0.65
             });
-            
+
             gsap.set(pushingRef.current, {
               y: -10 * exitProgress + 'vh',
               opacity: 1 - exitProgress * 0.8
             });
-            
+
             gsap.set(ctaRef.current, {
               y: -10 * exitProgress + 'vh',
               opacity: 1 - exitProgress * 0.8
             });
-            
+
             gsap.set(bottomInfoRef.current, {
               y: 6 * exitProgress + 'vh',
               opacity: 1 - exitProgress
@@ -432,7 +470,7 @@ function Portfolio() {
         const cards = section2.querySelectorAll('.project-card');
         const label = section2.querySelector('.section-label');
         const dot = section2.querySelector('.accent-dot');
-        
+
         ScrollTrigger.create({
           trigger: section2,
           start: 'top top',
@@ -441,16 +479,16 @@ function Portfolio() {
           scrub: 0.6,
           onUpdate: (self) => {
             const progress = self.progress;
-            
+
             if (progress <= 0.3) {
               const enterProgress = progress / 0.3;
-              
+
               gsap.set(label, { y: -10 * (1 - enterProgress) + 'vh', opacity: enterProgress });
               gsap.set(dot, { y: -10 * (1 - enterProgress) + 'vh', opacity: enterProgress });
-              
+
               cards.forEach((card, i) => {
                 const direction = i % 2 === 0 ? -1 : 1;
-                gsap.set(card, { 
+                gsap.set(card, {
                   x: direction * 50 * (1 - Math.min(enterProgress * (1.1 + i * 0.05), 1)) + 'vw',
                   opacity: Math.min(enterProgress * (1.1 + i * 0.05), 1)
                 });
@@ -458,12 +496,12 @@ function Portfolio() {
             }
             else if (progress > 0.7) {
               const exitProgress = (progress - 0.7) / 0.3;
-              
+
               cards.forEach((card, i) => {
                 const direction = i % 2 === 0 ? -1 : 1;
-                gsap.set(card, { 
-                  x: direction * 10 * exitProgress + 'vw', 
-                  opacity: 1 - exitProgress * 0.65 
+                gsap.set(card, {
+                  x: direction * 10 * exitProgress + 'vw',
+                  opacity: 1 - exitProgress * 0.65
                 });
               });
               gsap.set([label, dot], { opacity: 1 - exitProgress });
@@ -485,7 +523,7 @@ function Portfolio() {
         const cards = section3.querySelectorAll('.project-card');
         const label = section3.querySelector('.section-label');
         const dot = section3.querySelector('.accent-dot');
-        
+
         ScrollTrigger.create({
           trigger: section3,
           start: 'top top',
@@ -494,13 +532,13 @@ function Portfolio() {
           scrub: 0.6,
           onUpdate: (self) => {
             const progress = self.progress;
-            
+
             if (progress <= 0.3) {
               const enterProgress = progress / 0.3;
-              
+
               gsap.set([label, dot], { y: -10 * (1 - enterProgress) + 'vh', opacity: enterProgress });
               cards.forEach((card, i) => {
-                gsap.set(card, { 
+                gsap.set(card, {
                   y: 60 * (1 - Math.min(enterProgress * (1.1 + i * 0.05), 1)) + 'vh',
                   opacity: Math.min(enterProgress * (1.1 + i * 0.05), 1)
                 });
@@ -508,11 +546,11 @@ function Portfolio() {
             }
             else if (progress > 0.7) {
               const exitProgress = (progress - 0.7) / 0.3;
-              
+
               cards.forEach((card) => {
-                gsap.set(card, { 
-                  y: -15 * exitProgress + 'vh', 
-                  opacity: 1 - exitProgress * 0.65 
+                gsap.set(card, {
+                  y: -15 * exitProgress + 'vh',
+                  opacity: 1 - exitProgress * 0.65
                 });
               });
               gsap.set([label, dot], { opacity: 1 - exitProgress });
@@ -533,7 +571,7 @@ function Portfolio() {
         const cards = section4.querySelectorAll('.experiment-card');
         const label = section4.querySelector('.section-label');
         const dot = section4.querySelector('.accent-dot');
-        
+
         ScrollTrigger.create({
           trigger: section4,
           start: 'top top',
@@ -542,27 +580,27 @@ function Portfolio() {
           scrub: 0.6,
           onUpdate: (self) => {
             const progress = self.progress;
-            
+
             if (progress <= 0.3) {
               const enterProgress = progress / 0.3;
-              
+
               gsap.set([label, dot], { y: -10 * (1 - enterProgress) + 'vh', opacity: enterProgress });
-              gsap.set(cards[0], { 
+              gsap.set(cards[0], {
                 x: -50 * (1 - Math.min(enterProgress * 1.2, 1)) + 'vw',
                 opacity: Math.min(enterProgress * 1.2, 1)
               });
-              gsap.set(cards[1], { 
+              gsap.set(cards[1], {
                 y: 60 * (1 - Math.min(enterProgress * 1.1, 1)) + 'vh',
                 opacity: Math.min(enterProgress * 1.1, 1)
               });
-              gsap.set(cards[2], { 
+              gsap.set(cards[2], {
                 x: 50 * (1 - Math.min(enterProgress * 1.2, 1)) + 'vw',
                 opacity: Math.min(enterProgress * 1.2, 1)
               });
             }
             else if (progress > 0.7) {
               const exitProgress = (progress - 0.7) / 0.3;
-              
+
               gsap.set(cards[0], { x: -15 * exitProgress + 'vw', opacity: 1 - exitProgress * 0.65 });
               gsap.set(cards[1], { y: -15 * exitProgress + 'vh', opacity: 1 - exitProgress * 0.65 });
               gsap.set(cards[2], { x: 15 * exitProgress + 'vw', opacity: 1 - exitProgress * 0.65 });
@@ -582,7 +620,7 @@ function Portfolio() {
       const flowingSections = document.querySelectorAll('.flowing-section');
       flowingSections.forEach((section) => {
         const elements = section.querySelectorAll('.animate-in');
-        
+
         elements.forEach((el) => {
           gsap.fromTo(el,
             { y: 40, opacity: 0 },
@@ -625,19 +663,19 @@ function Portfolio() {
           BV
         </div>
         <div className="flex items-center gap-6">
-          <button 
-            onClick={() => scrollToSection('section-2')} 
+          <button
+            onClick={() => scrollToSection('section-2')}
             className="text-[#A7A9B5] hover:text-[#39FF14] transition-colors text-sm font-medium"
           >
             Work
           </button>
-          <button 
-            onClick={() => scrollToSection('section-about')} 
+          <button
+            onClick={() => scrollToSection('section-about')}
             className="text-[#A7A9B5] hover:text-[#39FF14] transition-colors text-sm font-medium"
           >
             About
           </button>
-          <a 
+          <a
             href="https://drive.google.com/file/d/1AKljxQAvzUIbi-hIf-uuCEOrqdmkGyrH/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
@@ -650,7 +688,7 @@ function Portfolio() {
       </nav>
 
       {/* Section 1: Hero */}
-      <section 
+      <section
         ref={heroRef}
         className="relative w-full h-screen overflow-hidden z-[100]"
       >
@@ -658,9 +696,9 @@ function Portfolio() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-radial from-[#0a0a1a] via-[#05050B] to-[#05050B]" />
           <div className="absolute inset-0 opacity-40">
-            <img 
-              src="/hero_orb.jpg" 
-              alt="" 
+            <img
+              src="/hero_orb.jpg"
+              alt=""
               className="w-full h-full object-cover scale-125"
             />
           </div>
@@ -670,15 +708,15 @@ function Portfolio() {
         {/* Content */}
         <div className="relative z-10 w-full h-full flex flex-col items-center justify-center vignette">
           {/* Animated Orb */}
-          <div 
+          <div
             ref={orbRef}
             className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[clamp(300px,42vw,600px)] h-[clamp(300px,42vw,600px)]"
           >
             <div className="relative w-full h-full rounded-full overflow-hidden shadow-[0_0_30px_rgba(57,255,20,0.25),0_0_60px_rgba(57,255,20,0.1)]">
               <div ref={orbInnerRef} className="w-full h-full">
-                <img 
-                  src="/hero_orb.jpg" 
-                  alt="XR Orb" 
+                <img
+                  src="/hero_orb.jpg"
+                  alt="XR Orb"
                   className="w-full h-full object-cover scale-150"
                 />
               </div>
@@ -689,42 +727,54 @@ function Portfolio() {
           </div>
 
           {/* Headline - Positioned lower */}
-          <div 
+          <div
             ref={headlineRef}
-            className="absolute left-1/2 top-[18%] -translate-x-1/2 text-center z-20"
+            className="absolute left-1/2 top-[18%] -translate-x-1/2 text-center z-20 w-full max-w-[95vw]"
           >
-            <h1 className="text-[clamp(36px,5.5vw,68px)] font-bold text-[#F5F7FF] leading-[0.95] drop-shadow-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-              Real-time XR &
-            </h1>
-            <h1 className="text-[clamp(36px,5.5vw,68px)] font-bold text-[#F5F7FF] leading-[0.95] mt-2 drop-shadow-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-              Simulation Engineer
+            <h1
+              className="text-[clamp(30px,4.5vw,58px)] font-bold text-[#F5F7FF] leading-[1.1] tracking-tight drop-shadow-2xl"
+              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+            >
+              R&D Software Engineer & <br /> Technical Consultant
             </h1>
           </div>
 
-          {/* Pushing Boundaries with Cycling Text - More spacing */}
-          <div 
+          <div
             ref={pushingRef}
-            className="absolute left-1/2 top-[38%] -translate-x-1/2 text-center z-20"
+            className="absolute left-1/2 top-[38%] -translate-x-1/2 z-20 w-full max-w-[90vw] md:max-w-[700px] px-4"
           >
-            <p className="text-[#39FF14] font-bold text-2xl md:text-3xl mb-3 drop-shadow-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-              Pushing Boundaries
-            </p>
-            <CyclingText />
+            {/* Shrink-wrapped glass box: Changed max-w, reduced padding, and pushed up */}
+            <div className="mx-auto w-fit text-center rounded-[24px] border border-white/5 bg-black/30 backdrop-blur-[20px] p-5 md:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+
+              <p
+                className="text-[#39FF14] font-bold text-lg md:text-2xl mb-2 tracking-wide leading-snug"
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              >
+                Engineering scalable systems from <br className="md:hidden" /> Concept to Production
+              </p>
+
+              <div
+                className="text-[#F5F7FF]/80 font-bold text-sm md:text-lg italic"
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              >
+                <CyclingText />
+              </div>
+            </div>
           </div>
 
           {/* CTA Buttons - Stacked vertically with more spacing */}
-          <div 
+          <div
             ref={ctaRef}
             className="absolute left-1/2 top-[58%] -translate-x-1/2 flex flex-col items-center gap-6 z-20"
           >
-            <Button 
+            <Button
               onClick={() => scrollToSection('section-2')}
               className="bg-[#39FF14] text-[#05050B] hover:bg-[#2dd911] font-semibold px-10 py-6 rounded-xl transition-all hover:scale-105 text-lg shadow-[0_0_20px_rgba(57,255,20,0.4)]"
             >
               View Work
               <ChevronRight className="w-5 h-5 ml-1" />
             </Button>
-            <Button 
+            <Button
               onClick={() => scrollToSection('section-contact')}
               variant="outline"
               className="border-[#39FF14] text-[#39FF14] hover:bg-[#39FF14] hover:text-[#05050B] font-medium px-6 py-3 rounded-xl transition-all text-sm"
@@ -734,13 +784,13 @@ function Portfolio() {
           </div>
 
           {/* Bottom Info */}
-          <div 
+          <div
             ref={bottomInfoRef}
             className="absolute bottom-[8vh] left-0 right-0 px-[6vw] flex justify-between items-end z-20"
           >
             <div className="text-[#A7A9B5] text-sm">
               <span className="font-mono text-xs uppercase tracking-widest text-[#39FF14]">Previously</span>
-              <p className="mt-1 font-medium text-[#F5F7FF]">@ BMW Group</p>
+              <CyclingRoles />
             </div>
             <div className="flex items-center gap-5">
               <a href="mailto:balajivelu3097@gmail.com" className="text-[#A7A9B5] hover:text-[#39FF14] transition-colors hover:scale-110">
@@ -758,7 +808,7 @@ function Portfolio() {
       </section>
 
       {/* Section 2: Selected Work - Row 1 (4 projects) */}
-      <section 
+      <section
         id="section-2"
         className="relative w-full h-screen overflow-hidden z-[200] bg-[#05050B]"
       >
@@ -776,13 +826,13 @@ function Portfolio() {
 
           <div className="absolute left-[6vw] top-[26vh] w-[88vw] h-[48vh] grid grid-cols-4 gap-[1.5vw]">
             {projects.slice(0, 4).map((project) => (
-              <div 
+              <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
                 className="project-card h-full rounded-xl overflow-hidden relative group cursor-pointer border border-white/[0.06] shadow-[0_18px_50px_rgba(0,0,0,0.55)] hover:border-[#39FF14]/40 transition-all duration-300 hover:-translate-y-2"
               >
-                <img 
-                  src={project.cardImage} 
+                <img
+                  src={project.cardImage}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -812,7 +862,7 @@ function Portfolio() {
       </section>
 
       {/* Section 3: Selected Work - Row 2 (4 projects) */}
-      <section 
+      <section
         id="section-3"
         className="relative w-full h-screen overflow-hidden z-[300] bg-[#05050B]"
       >
@@ -830,13 +880,13 @@ function Portfolio() {
 
           <div className="absolute left-[6vw] top-[22vh] w-[88vw] h-[56vh] grid grid-cols-4 gap-[1.5vw]">
             {projects.slice(4, 8).map((project) => (
-              <div 
+              <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
                 className="project-card h-full rounded-xl overflow-hidden relative group cursor-pointer border border-white/[0.06] shadow-[0_18px_50px_rgba(0,0,0,0.55)] hover:border-[#39FF14]/40 transition-all duration-300 hover:-translate-y-2"
               >
-                <img 
-                  src={project.cardImage} 
+                <img
+                  src={project.cardImage}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -867,7 +917,7 @@ function Portfolio() {
       </section>
 
       {/* Section 4: Experiments & Explorations */}
-      <section 
+      <section
         id="section-4"
         className="relative w-full h-screen overflow-hidden z-[400] bg-[#05050B]"
       >
@@ -885,13 +935,13 @@ function Portfolio() {
 
           <div className="absolute left-[6vw] top-[22vh] w-[88vw] h-[56vh] flex gap-[2.2vw]">
             {experiments.map((exp) => (
-              <div 
+              <div
                 key={exp.id}
                 onClick={() => setSelectedProject(exp)}
                 className="experiment-card flex-1 h-full rounded-xl overflow-hidden relative group cursor-pointer border border-white/[0.06] shadow-[0_18px_50px_rgba(0,0,0,0.55)] hover:border-[#39FF14]/40 transition-all duration-300 hover:-translate-y-2"
               >
-                <img 
-                  src={exp.cardImage} 
+                <img
+                  src={exp.cardImage}
                   alt={exp.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -916,7 +966,7 @@ function Portfolio() {
       </section>
 
       {/* Section 5: About */}
-      <section 
+      <section
         id="section-about"
         className="relative w-full min-h-screen z-[500] bg-[#05050B] flowing-section py-[12vh]"
       >
@@ -933,13 +983,13 @@ function Portfolio() {
             {/* Left Column - Profile Image & Quick Info */}
             <div className="animate-in">
               <div className="aspect-[3/4] max-w-md mx-auto lg:mx-0 rounded-xl overflow-hidden mb-8 border border-white/10">
-                <img 
-                  src="/profile.jpg" 
+                <img
+                  src="/profile.jpg"
                   alt="Balaji Velu"
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* What I Do */}
               <div className="space-y-4">
                 <h3 className="text-[#F5F7FF] font-semibold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I Do</h3>
@@ -983,38 +1033,38 @@ function Portfolio() {
               <h2 className="text-[clamp(24px,2.5vw,32px)] font-bold text-[#F5F7FF] leading-tight mb-6" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 Balaji Velu – Bridging Realities with XR
               </h2>
-              
+
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
                 Welcome to my corner of the internet!
               </p>
-              
+
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                I'm Bala, an XR Developer crafting immersive experiences at the intersection of technology, 
-                design, and human interaction. From prototyping to scalable product deployment, I thrive on 
-                solving complex problems, optimizing workflows, and crafting high-performance XR applications 
-                that push the boundaries of digital interaction. With a deep understanding of software, hardware, 
-                and environmental constraints, I specialize in developing frameworks and strategies that bridge 
-                the gap between theory and practice. Whether it's enhancing user experiences, refining spatial 
-                interactions, or tackling technical challenges, my approach is always rooted in collaboration, 
+                I'm Bala, an XR Developer crafting immersive experiences at the intersection of technology,
+                design, and human interaction. From prototyping to scalable product deployment, I thrive on
+                solving complex problems, optimizing workflows, and crafting high-performance XR applications
+                that push the boundaries of digital interaction. With a deep understanding of software, hardware,
+                and environmental constraints, I specialize in developing frameworks and strategies that bridge
+                the gap between theory and practice. Whether it's enhancing user experiences, refining spatial
+                interactions, or tackling technical challenges, my approach is always rooted in collaboration,
                 creativity, and thoughtful design.
               </p>
 
               <h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Beyond the Code</h3>
-              
+
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                Having worked with architects, designers, engineers, and planners, I bring a proactive 
-                problem-solving mindset, strong communication skills, and an interdisciplinary perspective 
-                to every project. I find inspiration in listening to people, sharing their passions, and 
-                working in fast-paced, innovative environments that encourage learning and growth. Sports 
-                have played a major role in shaping my discipline, resilience, and teamwork, qualities that 
+                Having worked with architects, designers, engineers, and planners, I bring a proactive
+                problem-solving mindset, strong communication skills, and an interdisciplinary perspective
+                to every project. I find inspiration in listening to people, sharing their passions, and
+                working in fast-paced, innovative environments that encourage learning and growth. Sports
+                have played a major role in shaping my discipline, resilience, and teamwork, qualities that
                 translate effectively into my professional life.
               </p>
 
               <h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I'm Exploring Now</h3>
-              
+
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                Currently, I'm working on Digital Humans and Generative AI for XR as a side project while 
-                actively looking for a challenging role where I can contribute my strategic and creative 
+                Currently, I'm working on Digital Humans and Generative AI for XR as a side project while
+                actively looking for a challenging role where I can contribute my strategic and creative
                 skills to a dynamic team.
               </p>
 
@@ -1037,7 +1087,7 @@ function Portfolio() {
       </section>
 
       {/* Section 6: Contact / Footer */}
-      <section 
+      <section
         id="section-contact"
         className="relative w-full min-h-screen z-[600] bg-[#0B0B10] flowing-section py-[12vh]"
       >
@@ -1045,17 +1095,17 @@ function Portfolio() {
           <div className="animate-in mb-8">
             <Sparkles className="w-12 h-12 text-[#39FF14] mx-auto mb-6" />
           </div>
-          
+
           <h2 className="animate-in text-[clamp(40px,5vw,64px)] font-bold text-[#F5F7FF] leading-[0.95]" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
             Let's build the next reality.
           </h2>
-          
+
           <p className="animate-in mt-6 text-[#A7A9B5] text-lg">
             Open to collaborations, speaking, and product roles.
           </p>
 
           <div className="animate-in mt-10">
-            <a 
+            <a
               href="mailto:balajivelu3097@gmail.com"
               className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#39FF14] text-[#39FF14] rounded-xl font-semibold hover:bg-[#39FF14] hover:text-[#05050B] transition-all duration-300"
             >
@@ -1065,7 +1115,7 @@ function Portfolio() {
           </div>
 
           <div className="animate-in mt-12 flex items-center justify-center gap-8">
-            <a 
+            <a
               href="https://www.linkedin.com/in/balaji-velu/"
               target="_blank"
               rel="noopener noreferrer"
@@ -1074,7 +1124,7 @@ function Portfolio() {
               <Linkedin className="w-5 h-5" />
               <span>LinkedIn</span>
             </a>
-            <a 
+            <a
               href="https://github.com/BalajiVelu"
               target="_blank"
               rel="noopener noreferrer"
@@ -1083,7 +1133,7 @@ function Portfolio() {
               <Github className="w-5 h-5" />
               <span>GitHub</span>
             </a>
-            <a 
+            <a
               href="https://drive.google.com/uc?export=download&id=19W2_606QvhIKcbC5m5nZPwPt_gYJCH6u"
               target="_blank"
               rel="noopener noreferrer"
