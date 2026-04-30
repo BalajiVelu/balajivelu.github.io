@@ -676,7 +676,7 @@ function Portfolio() {
             About
           </button>
           <a
-            href="https://drive.google.com/file/d/1AKljxQAvzUIbi-hIf-uuCEOrqdmkGyrH/view?usp=sharing"
+            href="https://drive.google.com/uc?export=download&id=1lG8nP-FOmPtr4qBC5QG0EMhlH37zHSFx"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#A7A9B5] hover:text-[#39FF14] transition-colors text-sm font-medium"
@@ -1177,7 +1177,7 @@ function Portfolio() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://drive.google.com/uc?export=download&id=19W2_606QvhIKcbC5m5nZPwPt_gYJCH6u"
+              href="https://drive.google.com/uc?export=download&id=1lG8nP-FOmPtr4qBC5QG0EMhlH37zHSFx"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[#A7A9B5] hover:text-[#39FF14] transition-colors"
