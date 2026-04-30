@@ -201,9 +201,9 @@ function CyclingText() {
   const textRef = useRef<HTMLDivElement>(null);
 
   const texts = [
-    "Building end-to-end products in XR, AI, and Robotics",
-    "Architecting Digital Twins and Industrie 4.0 simulations",
-    "Bridging technical execution with strategic consulting"
+    "Automated spatial validation at BMW: 4 hours → 72 seconds, 98% accuracy",
+    "Architected Omniverse digital twin pipeline integrating Revit, Rhino, NX, CATIA",
+    "Building ROS2 AMR simulation with BIM-derived navigation and AMCL localization"
   ];
 
   useEffect(() => {
@@ -241,7 +241,7 @@ function CyclingRoles() {
 
   const roles = [
     "@ BCG Group - Technical Consultant",
-    "@ BMW Group - System Software Engineer"
+    "@ BMW Group - Software Engineer"
   ];
 
   useEffect(() => {
@@ -729,19 +729,19 @@ function Portfolio() {
           {/* Headline - Positioned lower */}
           <div
             ref={headlineRef}
-            className="absolute left-1/2 top-[18%] -translate-x-1/2 text-center z-20 w-full max-w-[95vw]"
+            className="absolute left-1/2 top-[20%] -translate-x-1/2 text-center z-30 w-full max-w-[95vw]"
           >
             <h1
               className="text-[clamp(30px,4.5vw,58px)] font-bold text-[#F5F7FF] leading-[1.1] tracking-tight drop-shadow-2xl"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
-              R&D Software Engineer & <br /> Technical Consultant
+              Spatial Computing Engineer <br />
             </h1>
           </div>
 
           <div
             ref={pushingRef}
-            className="absolute left-1/2 top-[38%] -translate-x-1/2 z-20 w-full max-w-[90vw] md:max-w-[700px] px-4"
+            className="absolute left-1/2 top-[34%] -translate-x-1/2 z-20 w-full max-w-[90vw] md:max-w-[700px] px-4"
           >
             {/* Shrink-wrapped glass box: Changed max-w, reduced padding, and pushed up */}
             <div className="mx-auto w-fit text-center rounded-[24px] border border-white/5 bg-black/30 backdrop-blur-[20px] p-5 md:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
@@ -750,7 +750,7 @@ function Portfolio() {
                 className="text-[#39FF14] font-bold text-lg md:text-2xl mb-2 tracking-wide leading-snug"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
-                Engineering scalable systems from <br className="md:hidden" /> Concept to Production
+                Digital Twins · Robotics Perception  <br className="md:hidden" /> · 3D Geometry · Real-Time Registration
               </p>
 
               <div
@@ -995,78 +995,121 @@ function Portfolio() {
                 <h3 className="text-[#F5F7FF] font-semibold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I Do</h3>
                 <div className="space-y-2">
                   <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Design:</span> 3D, XR, UX, Spatial, AR / MR Frameworks
+                    <span className="text-[#39FF14]">Real-Time 3D Registration:</span> C++ plugins for spatial validation, Hausdorff distance, ICP refinement, point cloud alignment
                   </p>
                   <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Development:</span> Products, Strategies, Prototyping, Systems Thinking
+                    <span className="text-[#39FF14]">Robotics Perception:</span> ROS2 simulation, AMCL localization, sensor integration, BIM-to-robot coordinate transformations
                   </p>
                   <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Work Style:</span> Independent & Cross-Functional | Team Building & Leadership
+                    <span className="text-[#39FF14]">Digital Twin Pipelines:</span> CAD/BIM ingestion (Revit, Rhino, NX, CATIA), Omniverse/USD conversion, real-time visualization
+                  </p>
+                  <p className="text-[#A7A9B5] text-sm">
+                    <span className="text-[#39FF14]">Spatial Computing Systems:</span> HoloLens 2, Meta Quest3, OpenXR, Cross-platform AR/VR/MR Applicationdevelopment and deployment
                   </p>
                 </div>
               </div>
 
-              {/* A Few More Snippets */}
+              {/* Selected Work */}
               <div className="mt-8 space-y-4">
-                <h3 className="text-[#F5F7FF] font-semibold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>A Few More Snippets</h3>
-                <div className="space-y-2">
-                  <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Superpowers:</span> Initiative | Adaptable | Persistence | Optimism
-                  </p>
-                  <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Identity:</span> Indian | Aries | Stoic | Spiritual
-                  </p>
+                <h3
+                  className="text-[#F5F7FF] font-semibold text-lg"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                >
+                  Selected Work
+                </h3>
+
+                <div className="space-y-3">
+                  {/* Project 1 */}
+                  <a
+                    href="/work#bmw-spatial-validation"
+                    className="group block p-3 rounded-lg border border-[#2A2D3E] hover:border-[#39FF14] transition-colors"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#F5F7FF] text-sm font-medium group-hover:text-[#39FF14] transition-colors">
+                        Automated Spatial Validation
+                      </span>
+                      <span className="text-[#39FF14] text-xs">→</span>
+                    </div>
+                    <p className="text-[#A7A9B5] text-xs mt-1">
+                      BMW · Unreal Engine 5 · C++ · Hausdorff Distance
+                    </p>
+                  </a>
+
+                  {/* Project 2 */}
+                  <a
+                    href="/work#ros2-bim-amr"
+                    className="group block p-3 rounded-lg border border-[#2A2D3E] hover:border-[#39FF14] transition-colors"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#F5F7FF] text-sm font-medium group-hover:text-[#39FF14] transition-colors">
+                        ROS2 AMR Simulation
+                      </span>
+                      <span className="text-[#39FF14] text-xs">→</span>
+                    </div>
+                    <p className="text-[#A7A9B5] text-xs mt-1">
+                      BIM Integration · Gazebo · AMCL · URDF
+                    </p>
+                  </a>
+
+                  {/* Project 3 */}
+                  <a
+                    href="/work#omniverse-digital-twin"
+                    className="group block p-3 rounded-lg border border-[#2A2D3E] hover:border-[#39FF14] transition-colors"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#F5F7FF] text-sm font-medium group-hover:text-[#39FF14] transition-colors">
+                        Omniverse Digital Twin Pipeline
+                      </span>
+                      <span className="text-[#39FF14] text-xs">→</span>
+                    </div>
+                    <p className="text-[#A7A9B5] text-xs mt-1">
+                      BCG · USD · Datasmith · Revit · Rhino
+                    </p>
+                  </a>
                 </div>
               </div>
 
-              {/* Beyond Work */}
+              {/* Beyond Work 
               <div className="mt-8 space-y-4">
                 <h3 className="text-[#F5F7FF] font-semibold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Beyond Work</h3>
                 <p className="text-[#A7A9B5] text-sm">
                   <span className="text-[#39FF14]">Hobbies:</span> 🏑 | 📖 | 🌊 | 🏔️ | 🍳 | 🎸
                 </p>
-              </div>
+              </div>*/}
             </div>
 
             {/* Right Column - About Text */}
             <div className="animate-in">
               <h2 className="text-[clamp(24px,2.5vw,32px)] font-bold text-[#F5F7FF] leading-tight mb-6" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                Balaji Velu – Bridging Realities with XR
+                I build real-time spatial systems that align digital models with physical space.
               </h2>
 
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                Welcome to my corner of the internet!
+                At BMW, I developed a C++ plugin for Unreal Engine 5 that automated spatial validation using Hausdorff distance, replacing 4 hours of daily manual measurement with 72-second automated checks across 300 m² industrial environments.                At BCG, I architected Omniverse-based digital twin pipelines integrating multi-source CAD/BIM data for large-scale industrial projects.
+
               </p>
 
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                I'm Bala, an XR Developer crafting immersive experiences at the intersection of technology,
-                design, and human interaction. From prototyping to scalable product deployment, I thrive on
-                solving complex problems, optimizing workflows, and crafting high-performance XR applications
-                that push the boundaries of digital interaction. With a deep understanding of software, hardware,
-                and environmental constraints, I specialize in developing frameworks and strategies that bridge
-                the gap between theory and practice. Whether it's enhancing user experiences, refining spatial
-                interactions, or tackling technical challenges, my approach is always rooted in collaboration,
-                creativity, and thoughtful design.
+                My work spans robotics simulation (ROS2, Gazebo), 3D perception (point cloud registration, ICP), and spatial computing (HoloLens 2, OpenXR). I work primarily in C++ and Python.                 Currently based in Munich, open to roles in Spatial Computing, Robotics Perception, and Digital Twin Engineering. 
+
               </p>
 
-              <h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Beyond the Code</h3>
+             {/*<h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I'm Exploring Now</h3>*/}
 
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                Having worked with architects, designers, engineers, and planners, I bring a proactive
-                problem-solving mindset, strong communication skills, and an interdisciplinary perspective
-                to every project. I find inspiration in listening to people, sharing their passions, and
-                working in fast-paced, innovative environments that encourage learning and growth. Sports
-                have played a major role in shaping my discipline, resilience, and teamwork, qualities that
-                translate effectively into my professional life.
+                Current Focus: ROS2-based AMR simulation with BIM-integrated navigation and sensor fusion for indoor localization.
+              </p>
+              <p className="text-[#A7A9B5] leading-relaxed mb-6">
+                Side Project: Open3D Based Point Cloud Registration and Geometric Validation Pipeline
               </p>
 
-              <h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I'm Exploring Now</h3>
+              {/*<h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I'm Exploring Now</h3>*/}
 
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                Currently, I'm working on Digital Humans and Generative AI for XR as a side project while
-                actively looking for a challenging role where I can contribute my strategic and creative
-                skills to a dynamic team.
+                Currently based in Munich, open to roles in Spatial Computing, Robotics Perception, and Digital Twin Engineering. 
               </p>
+
+
 
               <p className="text-[#F5F7FF] font-semibold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 Curious? Feedback? Collaboration?
@@ -1097,7 +1140,7 @@ function Portfolio() {
           </div>
 
           <h2 className="animate-in text-[clamp(40px,5vw,64px)] font-bold text-[#F5F7FF] leading-[0.95]" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            Let's build the next reality.
+            Let's build precise spatial systems.
           </h2>
 
           <p className="animate-in mt-6 text-[#A7A9B5] text-lg">
