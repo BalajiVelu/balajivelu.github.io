@@ -45,15 +45,15 @@ Construction Teams → Need instant updates in an interactive environment`
   },
   {
     id: '02',
-    title: 'Mixed Reality for Production Planning',
+    title: 'Digital Factory - BIM-AR',
     subtitle: 'Application Development',
     cardImage: '/featured_02.jpg',  // v1 generated image
     detailImage: '/project_02.jpg', // Original website image
-    company: 'BMW Group',
-    fullTitle: 'Mixed Reality for Production Planning',
+    company: 'Major German OEM',
+    fullTitle: 'Augmented Reality for Factory Planning',
     description: 'Application Development for Factory Planning',
-    demoLink: 'https://youtu.be/SqNr5u2pLLU',
-    details: `Developed MR applications for production planning at BMW Group, enabling planners to visualize and interact with factory layouts in mixed reality.
+    demoLink: 'https://youtu.be/L5xJtNlNtZ8',
+    details: `Developed AR application for Industrial/Infrastructure Planning, enabling planners to visualize and interact with factory layouts in augmented reality.
 
 Key Features:
 - Real-time 3D visualization of factory layouts
@@ -201,9 +201,9 @@ function CyclingText() {
   const textRef = useRef<HTMLDivElement>(null);
 
   const texts = [
-    "Automated spatial validation at BMW: 4 hours → 72 seconds, 98% accuracy",
-    "Architected Omniverse digital twin pipeline integrating Revit, Rhino, NX, CATIA",
-    "Building ROS2 AMR simulation with BIM-derived navigation and AMCL localization"
+    "Automated spatial validation at BMW: Manual → Real-time Digital Validation, 98% accuracy",
+    "Developed Omniverse digital twin pipeline integrating Revit, Rhino, NX, CATIA",
+    "Developed BIM-to-AR pipeline for real-time visualization of 3D models in AR with HoloLens 2",
   ];
 
   useEffect(() => {
@@ -240,8 +240,8 @@ function CyclingRoles() {
   const roleRef = useRef<HTMLParagraphElement>(null);
 
   const roles = [
-    "@ BCG Group - Technical Consultant",
-    "@ BMW Group - Software Engineer"
+    "@ BCG Group - Technical Consultant (Digital Twins)",
+    "@ BMW Group - Software Engineer (XR & Digital Twins)",
   ];
 
   useEffect(() => {
@@ -735,7 +735,7 @@ function Portfolio() {
               className="text-[clamp(30px,4.5vw,58px)] font-bold text-[#F5F7FF] leading-[1.1] tracking-tight drop-shadow-2xl"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
-              Spatial Computing Engineer <br />
+              Spatial Engineer - Digital Twins <br />
             </h1>
           </div>
 
@@ -750,7 +750,7 @@ function Portfolio() {
                 className="text-[#39FF14] font-bold text-lg md:text-2xl mb-2 tracking-wide leading-snug"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
-                Digital Twins · Robotics Perception  <br className="md:hidden" /> · 3D Geometry · Real-Time Registration
+                Digital Twins · BIM/CAD Geometry  <br className="md:hidden" /> · Real-time Sptial Validation · XR
               </p>
 
               <div
@@ -978,8 +978,10 @@ function Portfolio() {
               About
             </h2>
           </div>
+        
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+           
             {/* Left Column - Profile Image & Quick Info */}
             <div className="animate-in">
               <div className="aspect-[3/4] max-w-md mx-auto lg:mx-0 rounded-xl overflow-hidden mb-8 border border-white/10">
@@ -989,115 +991,44 @@ function Portfolio() {
                   className="w-full h-full object-cover"
                 />
               </div>
+            
 
               {/* What I Do */}
               <div className="space-y-4">
                 <h3 className="text-[#F5F7FF] font-semibold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I Do</h3>
                 <div className="space-y-2">
                   <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Real-Time 3D Registration:</span> C++ plugins for spatial validation, Hausdorff distance, ICP refinement, point cloud alignment
+                    <span className="text-[#39FF14]">Digital Twin Pipelines:</span> Omniverse/USD conversion, real-time visualization, and multi-disciplinary coordination across AEC and manufacturing.
                   </p>
                   <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Robotics Perception:</span> ROS2 simulation, AMCL localization, sensor integration, BIM-to-robot coordinate transformations
+                    <span className="text-[#39FF14]">BIM/CAD Data Ingestion & Geometry Processing:</span> Multi-source pipeline architecture (Revit, Rhino, NX, CATIA), mesh conversion, and structured spatial environments for planning automation and AR overlay.
                   </p>
                   <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Digital Twin Pipelines:</span> CAD/BIM ingestion (Revit, Rhino, NX, CATIA), Omniverse/USD conversion, real-time visualization
+                      <span className="text-[#39FF14]">Real-Time 3D Registration & Validation:</span> C++ plugins for spatial validation, Hausdorff distance, ICP refinement, clash detection, and automated geometric accuracy verification.
                   </p>
                   <p className="text-[#A7A9B5] text-sm">
-                    <span className="text-[#39FF14]">Spatial Computing Systems:</span> HoloLens 2, Meta Quest3, OpenXR, Cross-platform AR/VR/MR Applicationdevelopment and deployment
+                    <span className="text-[#39FF14]">Spatial Computing & AR Systems:</span> HoloLens 2, Meta Quest3, OpenXR, Cross-platform AR/VR/MR Application development - enabling real-world model overlay for construction and validation.
                   </p>
                 </div>
               </div>
-
-              {/* Selected Work */}
-              <div className="mt-8 space-y-4">
-                <h3
-                  className="text-[#F5F7FF] font-semibold text-lg"
-                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-                >
-                  Selected Work
-                </h3>
-
-                <div className="space-y-3">
-                  {/* Project 1 */}
-                  <a
-                    href="/work#bmw-spatial-validation"
-                    className="group block p-3 rounded-lg border border-[#2A2D3E] hover:border-[#39FF14] transition-colors"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#F5F7FF] text-sm font-medium group-hover:text-[#39FF14] transition-colors">
-                        Automated Spatial Validation
-                      </span>
-                      <span className="text-[#39FF14] text-xs">→</span>
-                    </div>
-                    <p className="text-[#A7A9B5] text-xs mt-1">
-                      BMW · Unreal Engine 5 · C++ · Hausdorff Distance
-                    </p>
-                  </a>
-
-                  {/* Project 2 */}
-                  <a
-                    href="/work#ros2-bim-amr"
-                    className="group block p-3 rounded-lg border border-[#2A2D3E] hover:border-[#39FF14] transition-colors"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#F5F7FF] text-sm font-medium group-hover:text-[#39FF14] transition-colors">
-                        ROS2 AMR Simulation
-                      </span>
-                      <span className="text-[#39FF14] text-xs">→</span>
-                    </div>
-                    <p className="text-[#A7A9B5] text-xs mt-1">
-                      BIM Integration · Gazebo · AMCL · URDF
-                    </p>
-                  </a>
-
-                  {/* Project 3 */}
-                  <a
-                    href="/work#omniverse-digital-twin"
-                    className="group block p-3 rounded-lg border border-[#2A2D3E] hover:border-[#39FF14] transition-colors"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#F5F7FF] text-sm font-medium group-hover:text-[#39FF14] transition-colors">
-                        Omniverse Digital Twin Pipeline
-                      </span>
-                      <span className="text-[#39FF14] text-xs">→</span>
-                    </div>
-                    <p className="text-[#A7A9B5] text-xs mt-1">
-                      BCG · USD · Datasmith · Revit · Rhino
-                    </p>
-                  </a>
-                </div>
-              </div>
-
-              {/* Beyond Work 
-              <div className="mt-8 space-y-4">
-                <h3 className="text-[#F5F7FF] font-semibold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Beyond Work</h3>
-                <p className="text-[#A7A9B5] text-sm">
-                  <span className="text-[#39FF14]">Hobbies:</span> 🏑 | 📖 | 🌊 | 🏔️ | 🍳 | 🎸
-                </p>
-              </div>*/}
-            </div>
-
+             </div>
             {/* Right Column - About Text */}
             <div className="animate-in">
               <h2 className="text-[clamp(24px,2.5vw,32px)] font-bold text-[#F5F7FF] leading-tight mb-6" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                I build real-time spatial systems that align digital models with physical space.
+                I build the data and geometry foundations that make automated planning and XR possible in complex built environments.
               </h2>
 
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                At BMW, I developed a C++ plugin for Unreal Engine 5 that automated spatial validation using Hausdorff distance, replacing 4 hours of daily manual measurement with 72-second automated checks across 300 m² industrial environments.                At BCG, I architected Omniverse-based digital twin pipelines integrating multi-source CAD/BIM data for large-scale industrial projects.
+                At BMW, I developed a C++ plugin for Unreal Engine 5 that automated spatial validation using Hausdorff distance, replacing complex manual measurement with 72-second automated checks across 300 m² industrial environments.At BCG, I architected Omniverse-based digital twin pipelines integrating multi-source CAD/BIM data for large-scale industrial projects.
 
               </p>
 
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                My work spans robotics simulation (ROS2, Gazebo), 3D perception (point cloud registration, ICP), and spatial computing (HoloLens 2, OpenXR). I work primarily in C++ and Python.                 Currently based in Munich, open to roles in Spatial Computing, Robotics Perception, and Digital Twin Engineering. 
-
-              </p>
-
+                My work spans computational geometry (point cloud registration, ICP, Hausdorff distance), BIM/CAD interoperability, and spatial computing (HoloLens 2, OpenXR, Meta Quest 3). I work primarily in C++ and Python, shipping fast in BIM-AR workflows.
              {/*<h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I'm Exploring Now</h3>*/}
-
+              </p>
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                Current Focus: ROS2-based AMR simulation with BIM-integrated navigation and sensor fusion for indoor localization.
+                Currently focused on BIM-to-3D geometry processing and real-time spatial validation for the built environment.
               </p>
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
                 Side Project: Open3D Based Point Cloud Registration and Geometric Validation Pipeline
@@ -1106,7 +1037,7 @@ function Portfolio() {
               {/*<h3 className="text-[#F5F7FF] font-semibold text-xl mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>What I'm Exploring Now</h3>*/}
 
               <p className="text-[#A7A9B5] leading-relaxed mb-6">
-                Currently based in Munich, open to roles in Spatial Computing, Robotics Perception, and Digital Twin Engineering. 
+                Currently based in Munich, open to roles in Spatial Computing, Digital Twin and Construction Technology. 
               </p>
 
 
@@ -1126,6 +1057,7 @@ function Portfolio() {
               </p>
             </div>
           </div>
+          
         </div>
       </section>
 
@@ -1140,7 +1072,7 @@ function Portfolio() {
           </div>
 
           <h2 className="animate-in text-[clamp(40px,5vw,64px)] font-bold text-[#F5F7FF] leading-[0.95]" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            Let's build precise spatial systems.
+            Let's build together.
           </h2>
 
           <p className="animate-in mt-6 text-[#A7A9B5] text-lg">
