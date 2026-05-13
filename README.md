@@ -1,4 +1,4 @@
-# Portfolio — Design-First Web Experience
+# Portfolio - Design-First Web Experience
 
 A personal portfolio built from the ground up using a **design-first methodology**: narrative intent → UX architecture → UI design → interactive prototype → production code. This repository documents the full workflow from initial concept to live deployment.
 
@@ -6,7 +6,7 @@ A personal portfolio built from the ground up using a **design-first methodology
 
 ## Design Philosophy
 
-Every interface begins with intent. Before writing a line of code, the experience is mapped as a narrative: who is visiting, what they need to understand in the first 3 seconds, and how motion and hierarchy guide them through the story. The result is a site that feels intentional at every breakpoint — desktop, tablet, and mobile.
+Every interface begins with intent. Before writing a line of code, the experience is mapped as a narrative: who is visiting, what they need to understand in the first 3 seconds, and how motion and hierarchy guide them through the story. The result is a site that feels intentional at every breakpoint - desktop, tablet, and mobile.
 
 ---
 
@@ -28,22 +28,22 @@ Every interface begins with intent. Before writing a line of code, the experienc
 
 ![Portfolio Workflow](portfolio_workflow.png)
 
-### 01 — Intent
+### 01 - Intent
 Define the narrative arc and user journey. Establish what a visitor should feel, understand, and do within the first scroll.
 
-### 02 — UX Storyboarding
+### 02 - UX Storyboarding
 Map information architecture, content hierarchy, and scroll flow. Structure the experience before styling it.
 
-### 03 — UI Design
+### 03 - UI Design
 Establish the visual language: typography scale, color system, spacing rhythm, and interaction patterns. Designed in Figma with a component-driven mindset.
 
-### 04 — Interactive Prototype
+### 04 - Interactive Prototype
 Build a responsive, motion-rich prototype in Framer to validate the experience across devices and interaction states before committing to code.
 
-### 05 — Design → Code
+### 05 - Design → Code
 Translate the validated design system into a component architecture. Focus on performance, accessibility, and pixel-perfect fidelity to the prototype.
 
-### 06 — Deployment
+### 06 - Deployment
 Ship via GitHub Pages with branch-based CI/CD. Iterate live using version-controlled releases.
 
 ---
@@ -62,4 +62,4 @@ To demonstrate that strong engineering is inseparable from strong design thinkin
 
 ---
 
-Designed and vibe Coded by Balaji Velu
+Designed and Vibe Coded by Balaji Velu
