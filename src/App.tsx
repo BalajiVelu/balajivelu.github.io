@@ -54,8 +54,6 @@ Construction Teams → Need instant updates in an interactive environment`
     description: 'Application Development for Factory Planning',
     demoLink: 'https://youtu.be/L5xJtNlNtZ8',
     details: `Developed AR application for Industrial/Infrastructure Planning, enabling planners to visualize and interact with factory layouts in augmented reality.
-    demoLink: 'https://youtu.be/SqNr5u2pLLU',
-    details: `Developed MR applications for production planning processes, enabling planners to visualize and interact with factory layouts in mixed reality.
 
 Key Features:
 - Real-time 3D visualization of factory layouts
@@ -72,14 +70,14 @@ Key Features:
     company: 'BMW Group',
     fullTitle: 'HoloLens 2: Optimizing Tracking & Registration',
     description: 'Advanced tracking optimization for mixed reality applications',
-    demoLink: '',
+    demoLink: 'https://youtu.be/D2zKM4tD-ts',
     details: `Optimized tracking and registration for HoloLens 2 devices, improving the stability and accuracy of holographic overlays in industrial environments.
 
 Key Achievements:
 - Improved tracking stability by 40%
 - Reduced drift in holographic overlays
 - Enhanced user experience in factory settings
-- Developed custom C++ tracking algorithms`
+- Developed custom tracking algorithms`
   },
   {
     id: '04',
@@ -90,7 +88,7 @@ Key Achievements:
     company: 'BMW Group',
     fullTitle: 'Advanced Tracking for HoloLens 2: Novel Algorithm Development',
     description: 'Novel algorithms for improved spatial tracking',
-    demoLink: '',
+    demoLink: 'https://youtu.be/qzvA2AI198A',
     details: `Developed novel algorithms for advanced tracking on HoloLens 2, pushing the boundaries of what's possible with spatial computing.
 
 Research Focus:
@@ -244,8 +242,6 @@ function CyclingRoles() {
   const roles = [
     "@ BCG Group - Technical Consultant (Digital Twins)",
     "@ BMW Group - Software Engineer (XR & Digital Twins)",
-    "@ BCG Group - Technical Consultant - Digital Twin",
-    "@ BMW Group - Software Engineer - XR & Digital Twins",
   ];
 
   useEffect(() => {
